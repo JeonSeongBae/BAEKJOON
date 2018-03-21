@@ -8,23 +8,23 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		int input;
-		
+
 		if((input = sc.nextInt()) >= 1 && input <= Math.pow(10, 6)) {
-			int count = 0;
-			while(input != 1) {
-				if(input%3 == 0) {
-					input = input/3;
+			int[] count = new int[input+1];
+			
+			count[1] = 0;
+			
+			for(int i = 2; i <= input; i++) {
+				count[i] = count[i-1] + 1;
+				if(i%3 == 0) {
+					count[i] = Math.min(count[i], count[i/3] + 1);
 				}
-				else if(input%2 == 0) {
-					input = input/2;
+				if(i%2 == 0) {
+					count[i] = Math.min(count[i], count[i/2] + 1);
 				}
-				else {
-					input = 1;
-				}
-				count++;
-				
-				System.out.println(input);
 			}
+			
+			System.out.println(count[input]);
 		}
 		
 		sc.close();

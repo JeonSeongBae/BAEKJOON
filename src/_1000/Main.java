@@ -3,7 +3,7 @@ package _1000;
 import java.util.Scanner;
 
 public class Main {
-	// 두 수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
+	// 두 수를 입력받고 합을 출력하는 문제
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int A = scanner.nextInt();

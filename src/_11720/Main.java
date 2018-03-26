@@ -13,7 +13,6 @@ public class Main {
 			int a = Integer.parseInt(input.substring(i, i + 1));
 			remainder += a;
 		}
-
 		System.out.println(remainder);
 	}
 }

@@ -18,8 +18,9 @@ public class Main {
 		for (int i = 0; st.hasMoreTokens(); i++) {
 			NML[i] = Integer.parseInt(st.nextToken());
 		}
+		int size = NML[0];
 
-		int[] arrayN = new int[NML[0]];
+		int[] arrayN = new int[size];	
 		int index = 0;
 		int count = 0;
 		arrayN[0] = 1;
@@ -27,13 +28,13 @@ public class Main {
 		while (arrayN[index] != NML[1]) {
 			if (NML[1] % 2 == 0) {
 				// 짝 수, 시계 방향, +
-				arrayN[(index + NML[2]) % NML[0]]++;
-				index = (index + NML[2]) % NML[0];
+				arrayN[(index + NML[2]) % size]++;
+				index = (index + NML[2]) % size;
 				count++;
 			} else {
 				// 홀 수, 반시계 방향, -
-				arrayN[(index + (arrayN.length - NML[2])) % NML[0]]++;
-				index = (index + (arrayN.length - NML[2])) % NML[0];
+				arrayN[(index + (arrayN.length - NML[2])) % size]++;
+				index = (index + (arrayN.length - NML[2])) % size;
 				count++;
 			}
 		}

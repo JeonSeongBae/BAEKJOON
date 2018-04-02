@@ -9,8 +9,25 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String input = sc.next();
-		sc.close();
-
+		int n = sc.nextInt();
+		if (1 <= n && n <= 1000) {
+			if (n < 100) {
+				System.out.println(n);
+			} else {
+				int count = 99;
+				for (int i = 100; i <= n; i++) {
+					// 100의 자리
+					int hundred = i / 100;
+					// 10의 자리
+					int ten = (i / 10) % 10;
+					// 1의 자리
+					int one = i % 10;
+					if ((hundred - ten) == (ten - one)) {
+						count++;
+					}
+				}
+				System.out.println(count);
+			}
+		}
 	}
 }

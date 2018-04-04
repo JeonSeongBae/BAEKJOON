@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		/*
+		 * 예제를 보고 별찍는 규칙을 유추한 뒤에 별을 찍어 보세요.
+		 * 
+		 */
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		sc.close();

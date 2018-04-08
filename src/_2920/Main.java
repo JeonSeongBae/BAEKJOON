@@ -23,13 +23,38 @@ public class Main {
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 			int index = 0;
 			while (st.hasMoreTokens()) {
-				arr[index] = Integer.parseInt(st.nextToken());
+				arr[index++] = Integer.parseInt(st.nextToken());
 			}
-			
+			if (checkAscending(arr)) {
+				System.out.println("ascending");
+
+			} else if (checkdescending(arr)) {
+				System.out.println("descending");
+			} else {
+				System.out.println("mixed");
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
+	}
+
+	private static boolean checkdescending(int[] arr) {
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i - 1] - 1 != arr[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private static boolean checkAscending(int[] arr) {
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i - 1] != arr[i] - 1) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }

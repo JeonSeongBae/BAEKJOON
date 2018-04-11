@@ -23,18 +23,16 @@ public class Main {
 		int repeat = 0;
 		String S = "";
 		for (int i = 0; i < size; i++) {
+			StringBuffer sb = new StringBuffer();
 			st = new StringTokenizer(br.readLine(), " ");
 			repeat = Integer.parseInt(st.nextToken());
 			S = st.nextToken();
-			String output = "";
 			for (int j = 0; j < S.length(); j++) {
 				for (int k = 0; k < repeat; k++) {
-					output += S.substring(j, j + 1);
+					sb.append(S.substring(j, j + 1));
 				}
 			}
-			System.out.println(output);
+			System.out.println(sb);
 		}
-
 	}
-
 }

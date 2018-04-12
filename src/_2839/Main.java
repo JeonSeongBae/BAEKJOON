@@ -16,6 +16,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		int N = scanner.nextInt();
 		int count = 0;
+		
 		while (N >= 3) {
 			if (N % 5 == 0) {
 				count += N / 5;
@@ -26,6 +27,7 @@ public class Main {
 				N -= 3;
 			}
 		}
+		
 		if (N == 0) {
 			System.out.println(count);
 		} else {

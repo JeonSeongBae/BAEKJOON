@@ -26,9 +26,14 @@ public class Main {
 		String input = st.nextToken().toUpperCase();
 		int output = 0;
 		for (int i = input.length() - 1; i >= 0; i--) {
-
+			output += checkTime();
 		}
 		System.out.println(output);
+	}
+
+	private static int checkTime() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

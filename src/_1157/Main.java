@@ -24,6 +24,7 @@ public class Main {
 		int max = -1;
 		int maxIndex = -1;
 		boolean duplication = false;
+		
 		for (int i = 0; i < alpha.length; i++) {
 			if (alpha[i] > max) {
 				duplication = false;

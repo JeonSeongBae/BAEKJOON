@@ -26,15 +26,50 @@ public class Main {
 		String input = st.nextToken().toUpperCase();
 		int output = 0;
 		for (int i = input.length() - 1; i >= 0; i--) {
-			output += checkTime();
+			output += checkTime(input.charAt(i));
 		}
 		System.out.println(output);
 	}
 
-	private static int checkTime() {
-		// TODO Auto-generated method stub
-		return 0;
+	private static int checkTime(char charAt) {
+		switch (charAt) {
+		case 'A':
+		case 'B':
+		case 'C':
+			return 3;
+
+		case 'D':
+		case 'E':
+		case 'F':
+			return 4;
+		case 'G':
+		case 'H':
+		case 'I':
+			return 5;
+		case 'J':
+		case 'K':
+		case 'L':
+			return 6;
+		case 'M':
+		case 'N':
+		case 'O':
+			return 7;
+		case 'P':
+		case 'Q':
+		case 'R':
+		case 'S':
+			return 8;
+		case 'T':
+		case 'U':
+		case 'V':
+			return 9;
+		case 'W':
+		case 'X':
+		case 'Y':
+		case 'Z':
+			return 10;
+		default:
+			return 0;
+		}
 	}
-
-
 }

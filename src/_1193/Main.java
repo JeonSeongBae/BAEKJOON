@@ -13,5 +13,10 @@ public class Main {
 		 * 
 		 * X가 주어졌을 때, X번째 분수를 구하는 프로그램을 작성하시오.
 		 */
+		Scanner sc = new Scanner(System.in);
+
+		int input = sc.nextInt();
+
+		sc.close();
 	}
 }

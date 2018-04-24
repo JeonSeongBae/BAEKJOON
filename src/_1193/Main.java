@@ -11,17 +11,29 @@ public class Main {
 
 		boolean odd = oddNumber(input);
 		int sum = 0;
-		int i = 0;
-		while (input > sum + (i + 1)) {
-			i++;
-			sum +=i;
+		int up = 0;
+		int down = 1;
+		while (input > sum) {
+			up++;
+			sum += up;
 		}
-		
+		sum = input - (sum - up) - 1;
+
 		if (odd) {
-
+			// 홀수이면 분모가 -- 분자가 ++
+			for (int i = 0; i < sum; i++) {
+				up++;
+				down--;
+			}
 		} else {
-
+			// 짝수이면 분모가 ++ 분자가 --
+			for (int i = 0; i < sum; i++) {
+				up--;
+				down++;
+			}
 		}
+		System.out.println(up);
+		System.out.println(down);
 	}
 
 	private static boolean oddNumber(int input) {

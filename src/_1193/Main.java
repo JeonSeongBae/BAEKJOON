@@ -5,24 +5,35 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int 입력값 = sc.nextInt();
-		sc.close();
-		boolean isOdd = oddNumber(입력값);
-		int tempSum = 0;
-		int 분모 = 1;
-		int 분자 = 1;
-		while (입력값 >= tempSum) {
-			분모++;
-			tempSum += 분모;
-		}
+		// 1 3 4 10 11 21
+		// 2 5 9 12 20
+		// 6 8 13 19
+		// 7 14 18
+		// 15 17
+		// 16
+		while (true) {
+			Scanner sc = new Scanner(System.in);
+			int inputNumber = sc.nextInt();
+			int sum = 0;
+			int i = 0;
+			while (inputNumber > sum) {
+				sum += i;
+				i++;
+			}
+			sum = inputNumber - (sum - (i - 1));
+			// i가 짝수인지 홀 수 인지
+			boolean isodd = oddNumber(i - 1);
+			int j = 0;
+			for (j = 0; j < sum; j++) {
+				i--;
+			}
+			if (isodd) {
+				System.out.println(j + "/" + i);
+			} else {
+				System.out.println(i + "/" + j);
+			}
 
-		if (isOdd) {
-			// 홀수일경우
-		} else {
-			// 짝수일경우
 		}
-		System.out.println(분자 + "/" + 분모);
 	}
 
 	private static boolean oddNumber(int input) {

@@ -20,11 +20,15 @@ public class Main {
 		for (int i = 0; i < input.length; i++) {
 			number[input[i] - 48]++;
 		}
-		number[5] += number[9];
+		number[6] += number[9];
 		for (int i = 0; i < number.length - 1; i++) {
-			if (i == 5) {
-				if (many < number[i] / 2) {
+			if (i == 6) {
+				if (number[i] % 2 == 0 && many < number[i] / 2) {
+					// 짝 수
 					many = number[i] / 2;
+				} else if (many < number[i / 2] + 1) {
+					// 홀 수
+					many = number[i] / 2 + 1;
 				}
 			} else if (many < number[i]) {
 				many = number[i];

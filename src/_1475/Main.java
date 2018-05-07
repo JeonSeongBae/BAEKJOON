@@ -15,10 +15,22 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		char[] input = sc.next().toCharArray();
 		int[] number = new int[10];
+		int many = 0;
 		sc.close();
 		for (int i = 0; i < input.length; i++) {
 			number[input[i] - 48]++;
 		}
+		number[5] += number[9];
+		for (int i = 0; i < number.length - 1; i++) {
+			if (i == 5) {
+				if (many < number[i] / 2) {
+					many = number[i] / 2;
+				}
+			} else if (many < number[i]) {
+				many = number[i];
+			}
+		}
+		System.out.println(many);
 	}
 
 }

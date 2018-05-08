@@ -10,6 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
+		sc.close();
 		if (1 <= n && n <= 1000) {
 			if (n < 100) {
 				System.out.println(n);

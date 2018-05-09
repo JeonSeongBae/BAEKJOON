@@ -19,6 +19,7 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		int inputNumber = sc.nextInt();
+		sc.close();
 		int sum = 0;
 		int i = 0;
 		while (inputNumber > sum) {

@@ -11,15 +11,15 @@ public class Main {
 	// •empty: 스택이 비어있으면 1, 아니면 0을 출력한다.
 	// •top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
 		int command_Num = sc.nextInt();
 		sc.nextLine();
-		
+
 		Stack<Integer> Mystack = new Stack<Integer>();
 		int a = 0;
-		
+
 		while (a < command_Num) {
 			String command = sc.nextLine();
 			String[] commandArray = command.split(" ");
@@ -40,17 +40,15 @@ public class Main {
 				} else {
 					System.out.println(Mystack.peek());
 				}
-			}
-			else if(command.equals("pop")) {
+			} else if (command.equals("pop")) {
 				if (Mystack.empty()) {
 					System.out.println("-1");
 				} else {
 					System.out.println(Mystack.pop());
 				}
 			}
-
 			a++;
 		}
-
+		sc.close();
 	}
 }

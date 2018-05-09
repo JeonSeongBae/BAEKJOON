@@ -20,8 +20,39 @@ public class Main {
 		 * 구하는 프로그램을 작성하라.
 		 */
 		Scanner sc = new Scanner(System.in);
-		
+		int size = sc.nextInt();
+		for (int i = 0; i < size; i++) {
+			int M = sc.nextInt();
+			int N = sc.nextInt();
+			int x = sc.nextInt();
+			int y = sc.nextInt();
+			int mn = LCM(M, N);
+			while (x != y && x <= mn) {
+				if (x < y)
+					x += M;
+				else
+					y += N;
+			}
+			if (x != y)
+				System.out.println("-1");
+			else
+				System.out.println(x);
+		}
 		sc.close();
+	}
+
+	private static int LCM(int m, int n) {
+		int z, a, b;
+		a = m;
+		b = n;
+		while (true) {
+			z = a % b;
+			if (z == 0)
+				break;
+			a = b;
+			b = z;
+		}
+		return (m * n) / b;
 	}
 
 }

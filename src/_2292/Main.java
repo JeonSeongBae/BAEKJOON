@@ -14,6 +14,7 @@ public class Main {
 
 		int input = sc.nextInt();
 		sc.close();
+		
 		int count = 1, sum = 1;
 		for (int i = 1; sum < input; sum += 6 * i, i++) {
 			count++;

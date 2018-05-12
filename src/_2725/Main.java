@@ -6,30 +6,26 @@ public class Main {
 	static int size;
 	static int[] A;
 
-	public Main(int size) {
-		A = new int[size]; // heap배열의 기본크기
-	}
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		size = sc.nextInt();
-		Main h = new Main(size + 1);
+		A = new int[size + 1]; // heap배열의 기본크기
 
 		for (int i = 1; i < A.length; i++) {
 			A[i] = sc.nextInt();
 		}
 
-		h.BULIDMAXHEAP(A);
-		h.print(A);
+		BULIDMAXHEAP(A);
+		print(A);
 	}
 
-	private void BULIDMAXHEAP(int[] A) {
+	private static void BULIDMAXHEAP(int[] A) {
 		for (int i = size; i >= 1; i--) {
 			MAXHEAPIFY(A, i);
 		}
 	}
 
-	private void MAXHEAPIFY(int[] A, int i) {
+	private static void MAXHEAPIFY(int[] A, int i) {
 		int L = LEFTCHILD(i);
 		int R = RIGHTCHILD(i);
 		int largest;
@@ -56,14 +52,14 @@ public class Main {
 		return A[1];
 	}
 
-	private void print(int[] A) {
+	private static void print(int[] A) {
 		for (int i = 1; i < A.length; i++) {
 			System.out.println(extract_max(A));
 			BULIDMAXHEAP(A);
 		}
 	}
 
-	public int extract_max(int[] A) {
+	public static int extract_max(int[] A) {
 		int max = A[1];
 		A[1] = A[size];
 		A[size--] = 0;

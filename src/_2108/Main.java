@@ -1,7 +1,6 @@
 package _2108;
 
 import java.util.*;
-import java.util.Arrays;
 
 public class Main {
 	public static void main(String[] args) {
@@ -24,14 +23,12 @@ public class Main {
 			array[i] = sc.nextInt();
 			sum += array[i];
 		}
-
+		sc.close();
 		Arrays.sort(array);
-
 		int x = 0;
 		for (int i = 0; i < size; i++) {
 			m[array[i] + 4000]++;
 			x = Math.max(x, m[array[i] + 4000]);
-
 		}
 		int second = 0;
 		for (int i = 0; i < m.length; i++) {

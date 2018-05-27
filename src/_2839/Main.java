@@ -14,21 +14,22 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int N = scanner.nextInt();
+		int size = scanner.nextInt();
+		scanner.close();
 		int count = 0;
 		
-		while (N >= 3) {
-			if (N % 5 == 0) {
-				count += N / 5;
-				N = 0;
+		while (size >= 3) {
+			if (size % 5 == 0) {
+				count += size / 5;
+				size = 0;
 				break;
 			} else {
 				count++;
-				N -= 3;
+				size -= 3;
 			}
 		}
 		
-		if (N == 0) {
+		if (size == 0) {
 			System.out.println(count);
 		} else {
 			System.out.println(-1);

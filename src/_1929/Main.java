@@ -9,7 +9,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int first = sc.nextInt();
 		int last = sc.nextInt();
-
+		sc.close();
 		int[] primeNumArr = new int[last + 1];
 
 		for (int i = 0; i < last + 1; i++) {

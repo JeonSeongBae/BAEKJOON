@@ -12,6 +12,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		// 소문자 string을 입력받음
 		String S = sc.next();
+		sc.close();
 		// 개수를 넣어 줄 배열
 		int[] count = new int[26];
 		// -1로 배열 초기화

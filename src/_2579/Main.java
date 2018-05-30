@@ -25,7 +25,7 @@ public class Main {
 		for (int i = 1; i <= n; i++) {
 			stairScore[i] = sc.nextInt();
 		}
-
+		sc.close();
 		scoreSum[1] = stairScore[1];
 		scoreSum[2] = stairScore[1] + stairScore[2];
 		

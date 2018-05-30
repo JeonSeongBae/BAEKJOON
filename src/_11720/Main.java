@@ -8,6 +8,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int size = sc.nextInt();
 		String input = sc.next();
+		sc.close();
 		int remainder = 0;
 		for (int i = 0; i < size; i++) {
 			int a = Integer.parseInt(input.substring(i, i + 1));

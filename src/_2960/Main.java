@@ -16,6 +16,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int k = sc.nextInt();
+		sc.close();
 		int count = 0;
 		int[] array = new int[n + 1];
 		array[0] = 1;

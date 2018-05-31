@@ -12,7 +12,7 @@ public class Main {
 		for (int i = 1; i < A.length; i++) {
 			A[i] = sc.nextInt();
 		}
-
+		sc.close();
 		BULIDMAXHEAP(A);
 		print(A);
 	}

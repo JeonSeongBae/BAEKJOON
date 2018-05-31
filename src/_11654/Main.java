@@ -12,6 +12,7 @@ public class Main {
 		 */
 		Scanner sc = new Scanner(System.in);
 		char input = sc.nextLine().charAt(0);
+		sc.close();
 		System.out.println((int) input);
 	}
 

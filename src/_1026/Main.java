@@ -23,6 +23,7 @@ public class Main {
 		for (int j = 0; j < num; j++) {
 			B[j] = scanner.nextInt();
 		}
+		scanner.close();
 
 		Arrays.sort(A);
 		Arrays.sort(B);

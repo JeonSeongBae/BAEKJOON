@@ -32,11 +32,11 @@ public class Main {
 			}
 
 			// 2부터 i-1까지 나눠지는 수가 없으면 소수
-			for (int j = 2; j < i; j++) {
+			for (int j = 2; j <= data[i]; j++) {
 				// j로 나눠진다면 소수
-				if (i % j == 0) {
+				if (data[i] % j == 0) {
 					break;
-				} else if ((j + 1) == i) {
+				} else if ((j + 1) == data[i]) {
 					count++;
 					break;
 				}

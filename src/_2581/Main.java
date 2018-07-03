@@ -14,11 +14,11 @@ public class Main {
 		// 입력받을 숫자의 수
 		int start = scanner.nextInt();
 		int end = scanner.nextInt();
-
+		int size = end-start;
 		// 입력받은 값을 저장할 공간
-		int[] data = new int[end - start + 1];
-		for (int i = start + 1; i <= end; i++) {
-			data[i] = i;
+		int[] data = new int[size+1];
+		for (int i = 0; i <= size; i++) {
+			data[i] = start++;
 		}
 
 		// 소수인지 확인하는 변수
@@ -59,6 +59,7 @@ public class Main {
 			for (int i = 0; i < al.size(); i++) {
 				total += al.get(i);
 			}
+			System.out.println(total);
 			System.out.println(al.get(0));
 		}
 	}

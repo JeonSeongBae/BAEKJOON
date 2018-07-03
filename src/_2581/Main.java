@@ -15,6 +15,7 @@ public class Main {
 		int start = scanner.nextInt();
 		int end = scanner.nextInt();
 		int size = end-start;
+		
 		// 입력받은 값을 저장할 공간
 		int[] data = new int[size+1];
 		for (int i = 0; i <= size; i++) {
@@ -22,7 +23,7 @@ public class Main {
 		}
 
 		// 소수인지 확인하는 변수
-		int count = 0;
+		boolean count = false;
 
 		for (int i = 0; i < data.length; i++) {
 			// 1의 경우 소수가 아님
@@ -33,7 +34,7 @@ public class Main {
 			// 2의 경우 소수
 			if (data[i] == 2) {
 				al.add(data[i]);
-				count++;
+				count = true;
 				continue;
 			}
 
@@ -44,7 +45,7 @@ public class Main {
 					break;
 				} else if ((j + 1) == data[i]) {
 					al.add(data[i]);
-					count++;
+					count = true;
 					break;
 				}
 			}
@@ -52,7 +53,7 @@ public class Main {
 		scanner.close();
 
 		// print count
-		if (count == 0) {
+		if (count) {
 			System.out.println("-1");
 		} else {
 			int total = 0;

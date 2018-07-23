@@ -14,13 +14,14 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
+		// 입력받을 커맨드 갯수
 		int command_Num = sc.nextInt();
 		sc.nextLine();
 
 		Stack<Integer> Mystack = new Stack<Integer>();
-		int a = 0;
+		int count = 0;
 
-		while (a < command_Num) {
+		while (count < command_Num) {
 			String command = sc.nextLine();
 			String[] commandArray = command.split(" ");
 
@@ -47,7 +48,7 @@ public class Main {
 					System.out.println(Mystack.pop());
 				}
 			}
-			a++;
+			count++;
 		}
 		sc.close();
 	}

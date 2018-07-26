@@ -7,25 +7,25 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int first = sc.nextInt();
-		int last = sc.nextInt();
+		int firstNumber = sc.nextInt();
+		int endNumber = sc.nextInt();
 		sc.close();
-		int[] primeNumArr = new int[last + 1];
+		int[] dataArray = new int[endNumber + 1];
 
-		for (int i = 0; i < last + 1; i++) {
-			primeNumArr[i] = 1;
+		for (int i = 0; i < endNumber + 1; i++) {
+			dataArray[i] = 1;
 		}
 		
-		primeNumArr[1] = 0;
+		dataArray[1] = 0;
 
-		for (int i = 2; i < last + 1; i++) {
-			for (int j = 2; i * j <= last; j++) {
-				primeNumArr[i * j] = 0;
+		for (int i = 2; i < endNumber + 1; i++) {
+			for (int j = 2; i * j <= endNumber; j++) {
+				dataArray[i * j] = 0;
 			}
 		}
 
-		for (int i = first; i < last + 1; i++) {
-			if (primeNumArr[i] == 1) {
+		for (int i = firstNumber; i < endNumber + 1; i++) {
+			if (dataArray[i] == 1) {
 				System.out.println(i);
 			}
 		}

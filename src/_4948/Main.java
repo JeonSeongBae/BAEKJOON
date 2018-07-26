@@ -1,6 +1,5 @@
 package _4948;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -20,47 +19,45 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		// 소수를 저장하기 위한 자료구조
-		ArrayList<Integer> al = new ArrayList<Integer>();
+		int count = 0;
+		int input = Integer.parseInt(scanner.nextLine());
 
-		int input = scanner.nextInt();
 		while (input != 0) {
 			int start = input;
 			int end = input * 2;
 			int size = end - input;
 
 			// 입력받은 값을 저장할 공간
-			int[] data = new int[size];
-			for (int i = 0; i < size; i++) {
-				data[i] = ++start;
-			}
-			for (int i = 0; i < data.length; i++) {
+			for (int i = input; i < end; i++) {
 				// 1의 경우 소수가 아님
-				if (data[i] == 1) {
+				if (i == 1) {
 					continue;
 				}
 
 				// 2의 경우 소수
-				if (data[i] == 2) {
-					al.add(data[i]);
+				if (i == 2) {
+					count++;
 					continue;
 				}
 
 				// 2부터 i-1까지 나눠지는 수가 없으면 소수
-				for (int j = 2; j <= data[i]; j++) {
+				for (int j = 2; j <= i; j++) {
 					// j로 나눠진다면 소수
-					if (data[i] % j == 0) {
+					if (i % j == 0) {
 						break;
-					} else if ((j + 1) == data[i]) {
-						al.add(data[i]);
+					} else if ((j + 1) == i) {
+						count++;
 						break;
 					}
 				}
 			}
 
 			// print count
-			System.out.println(al.size());
-			input = scanner.nextInt();
-			al = new ArrayList<Integer>();
+			System.out.println(count);
+
+			// 초기화
+			count = 0;
+			input = Integer.parseInt(scanner.nextLine());
 		}
 
 		scanner.close();

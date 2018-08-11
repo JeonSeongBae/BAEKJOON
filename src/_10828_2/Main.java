@@ -1,4 +1,4 @@
-package _10828;
+package _10828_2;
 
 import java.util.*;
 
@@ -24,28 +24,36 @@ public class Main {
 		while (count < command_Num) {
 			String command = sc.nextLine();
 			String[] commandArray = command.split(" ");
-
 			if (commandArray[0].equals("push")) {
 				Mystack.push(Integer.parseInt(commandArray[1]));
-			} else if (command.equals("size")) {
-				System.out.println(Mystack.size());
-			} else if (command.equals("empty")) {
-				if (Mystack.empty()) {
-					System.out.println("1");
-				} else {
-					System.out.println("0");
-				}
-			} else if (command.equals("top")) {
-				if (Mystack.empty()) {
-					System.out.println("-1");
-				} else {
-					System.out.println(Mystack.peek());
-				}
-			} else if (command.equals("pop")) {
-				if (Mystack.empty()) {
-					System.out.println("-1");
-				} else {
-					System.out.println(Mystack.pop());
+			} else {
+				switch (command) {
+				case "size":
+					System.out.println(Mystack.size());
+					break;
+				case "empty":
+					if (Mystack.empty()) {
+						System.out.println("1");
+					} else {
+						System.out.println("0");
+					}
+					break;
+				case "top":
+					if (Mystack.empty()) {
+						System.out.println("-1");
+					} else {
+						System.out.println(Mystack.peek());
+					}
+					break;
+				case "pop":
+					if (Mystack.empty()) {
+						System.out.println("-1");
+					} else {
+						System.out.println(Mystack.pop());
+					}
+					break;
+				default:
+					break;
 				}
 			}
 			count++;
